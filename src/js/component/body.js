@@ -4,20 +4,12 @@ import { Card } from "./card";
 
 export function MyBody() {
 	const cardInfo = [
-		[
-			"https://picsum.photos/id/237/500/325",
-			"https://picsum.photos/id/238/500/325",
-			"https://picsum.photos/id/239/500/325",
-			"https://picsum.photos/id/240/500/325"
-		],
-		["Title 1", "Title 2", "Title 3", "Title 4"],
-		[
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nisi.",
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nisi.",
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nisi.",
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nisi."
-		]
+		"https://picsum.photos/id/",
+		"Title ",
+		"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nisi."
 	];
+
+	const cardsToBuild = 30;
 
 	const badgeStyles = {
 		//write the span styles here
@@ -27,13 +19,13 @@ export function MyBody() {
 
 	const cards = [];
 
-	for (let i = 0; i < 4; i++) {
+	for (let i = 0; i < cardsToBuild; i++) {
 		cards.push(
 			<Card
 				key={i}
-				url={cardInfo[0][i]}
-				title={cardInfo[1][i]}
-				content={cardInfo[2][i]}
+				url={cardInfo[0] + i + "/500/325"}
+				title={cardInfo[1] + (i + 1)}
+				content={cardInfo[2]}
 			/>
 		);
 	}
